@@ -3,13 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MenuView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Vocab_Rap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="MenuView" customClass="MenuViewController" customModule="VocabRap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,63 +17,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYm-lf-ysg">
-                                <rect key="frame" x="20" y="285" width="560" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="EUv-Ap-xjb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="About"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-qh-3xu">
-                                <rect key="frame" x="20" y="426" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="My Raps">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vocab Rap " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5q-Al-Mas">
-                                <rect key="frame" x="94" y="91" width="413" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="NLC-yY-4je"/>
-                                </constraints>
+                                <rect key="frame" x="205" y="44" width="190.5" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYm-lf-ysg">
+                                <rect key="frame" x="274" y="300" width="52" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <segue destination="VED-D6-C9u" kind="show" identifier="MenuToAbout" action="showDetailViewController:sender:" id="cd9-FE-luR"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHh-mu-RkM">
-                                <rect key="frame" x="20" y="365" width="560" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="sMw-Ne-ceX"/>
-                                </constraints>
+                                <rect key="frame" x="265" y="358" width="71" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Add Rap">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-qh-3xu">
+                                <rect key="frame" x="263.5" y="416" width="73" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="My Raps">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="leading" secondItem="vYm-lf-ysg" secondAttribute="leading" id="0RA-nZ-ZQU"/>
-                            <constraint firstItem="B5q-Al-Mas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="74" id="4rb-JR-T6u"/>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="leading" secondItem="MlJ-qh-3xu" secondAttribute="leading" id="6m5-wK-sIM"/>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="trailing" secondItem="MlJ-qh-3xu" secondAttribute="trailing" id="8nM-Ja-g2E"/>
-                            <constraint firstItem="B5q-Al-Mas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="71" id="CLW-fE-vGL"/>
-                            <constraint firstItem="B5q-Al-Mas" firstAttribute="centerX" secondItem="vYm-lf-ysg" secondAttribute="centerX" id="CVr-h2-4dT"/>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CmV-ej-0RS"/>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="top" secondItem="vYm-lf-ysg" secondAttribute="bottom" constant="51" id="KGF-tz-skA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MlJ-qh-3xu" secondAttribute="bottom" constant="144" id="NoI-gd-L0b"/>
-                            <constraint firstItem="vYm-lf-ysg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fGQ-Qr-pXy"/>
-                            <constraint firstItem="kHh-mu-RkM" firstAttribute="trailing" secondItem="vYm-lf-ysg" secondAttribute="trailing" id="h5k-5H-ttg"/>
-                            <constraint firstItem="vYm-lf-ysg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kXl-kR-XJe"/>
-                            <constraint firstItem="MlJ-qh-3xu" firstAttribute="top" secondItem="kHh-mu-RkM" secondAttribute="bottom" constant="32" id="qfI-zz-Ewa"/>
+                            <constraint firstItem="vYm-lf-ysg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="300" id="9HY-xe-LVO"/>
+                            <constraint firstItem="kHh-mu-RkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C34-Le-ERH"/>
+                            <constraint firstItem="kHh-mu-RkM" firstAttribute="top" secondItem="vYm-lf-ysg" secondAttribute="bottom" constant="24" id="JBd-mp-yC5"/>
+                            <constraint firstItem="vYm-lf-ysg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zaj-9O-fxl"/>
+                            <constraint firstItem="MlJ-qh-3xu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bx5-ip-K9a"/>
+                            <constraint firstItem="B5q-Al-Mas" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mld-WF-JCO"/>
+                            <constraint firstItem="B5q-Al-Mas" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="oGd-DR-rzz"/>
+                            <constraint firstItem="MlJ-qh-3xu" firstAttribute="top" secondItem="kHh-mu-RkM" secondAttribute="bottom" constant="24" id="tzN-4d-7wI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gh6-TP-Wbr"/>
+                    <connections>
+                        <outlet property="menuAboutButton" destination="vYm-lf-ysg" id="HfP-wH-0iK"/>
+                        <outlet property="menuAddRapButton" destination="kHh-mu-RkM" id="vZM-R1-xS8"/>
+                        <outlet property="menuMyRapsButton" destination="MlJ-qh-3xu" id="Aoa-In-aGY"/>
+                        <outlet property="menuTitleLabel" destination="B5q-Al-Mas" id="idK-Ur-rCb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="-388"/>
+            <point key="canvasLocation" x="1733" y="-404"/>
+        </scene>
+        <!--AboutView-->
+        <scene sceneID="lDz-x0-87Q">
+            <objects>
+                <viewController id="VED-D6-C9u" userLabel="AboutView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G2d-ep-M40"/>
+                        <viewControllerLayoutGuide type="bottom" id="fUh-8d-GEf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="te7-zc-Ebo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-Le-BLb">
+                                <rect key="frame" x="248" y="42" width="104.5" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wzB-vs-KVG">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="yIa-14-xhf"/>
+                                    <constraint firstAttribute="height" constant="240" id="z9a-dk-5RB"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-xP-6dw">
+                                <rect key="frame" x="279" y="524" width="42" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="AboutToMenu" id="uLa-K6-k83"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fvI-xP-6dw" firstAttribute="centerX" secondItem="te7-zc-Ebo" secondAttribute="centerX" id="276-sJ-MoQ"/>
+                            <constraint firstItem="wHV-Le-BLb" firstAttribute="centerX" secondItem="te7-zc-Ebo" secondAttribute="centerX" id="2mM-Nt-h0X"/>
+                            <constraint firstItem="wHV-Le-BLb" firstAttribute="top" secondItem="te7-zc-Ebo" secondAttribute="top" constant="42" id="Ue4-PU-QQ4"/>
+                            <constraint firstItem="wzB-vs-KVG" firstAttribute="centerY" secondItem="te7-zc-Ebo" secondAttribute="centerY" id="c5a-AO-Zik"/>
+                            <constraint firstItem="wzB-vs-KVG" firstAttribute="centerX" secondItem="te7-zc-Ebo" secondAttribute="centerX" id="eNT-Ne-oLH"/>
+                            <constraint firstItem="fUh-8d-GEf" firstAttribute="top" secondItem="fvI-xP-6dw" secondAttribute="bottom" constant="42" id="p2h-vV-guf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOG-Gc-Kc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="-404"/>
         </scene>
     </scenes>
 </document>

@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
     
     // MAIN: Properties
+    @IBOutlet weak var menuTitleLabel: UILabel!
+    @IBOutlet weak var menuAboutButton: UIButton!
+    @IBOutlet weak var menuAddRapButton: UIButton!
+    @IBOutlet weak var menuMyRapsButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
