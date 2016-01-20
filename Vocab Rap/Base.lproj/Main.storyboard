@@ -47,6 +47,9 @@
                                 <state key="normal" title="My Raps">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QIN-l7-rxh" kind="show" identifier="menuToLists" id="vNb-p0-Zut"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,19 +89,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a new term." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kho-Of-uBh" userLabel="Vocab Text Field">
-                                <rect key="frame" x="207" y="257" width="147.5" height="30"/>
+                                <rect key="frame" x="253" y="246" width="147.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tai-FM-Tsr">
-                                <rect key="frame" x="283" y="356" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="AddToMenu" id="rfu-y6-cFT"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Change the list's name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dln-tV-7Ym" userLabel="Name Text Field">
-                                <rect key="frame" x="207" y="54" width="156.5" height="30"/>
+                                <rect key="frame" x="248" y="64" width="156.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -108,10 +104,31 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nBC-PR-Dhc" userLabel="Vocab List">
-                                <rect key="frame" x="55" y="210" width="100" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tai-FM-Tsr">
+                                <rect key="frame" x="324" y="360" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="AddToMenu" id="rfu-y6-cFT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inl-yd-zY6">
+                                <rect key="frame" x="329" y="457" width="46" height="30"/>
+                                <state key="normal" title="Show List"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjk-af-roI">
+                                <rect key="frame" x="303" y="119" width="46" height="30"/>
+                                <state key="normal" title="Change Name"/>
+                                <connections>
+                                    <action selector="changeName:" destination="krO-gn-seh" eventType="touchUpInside" id="9Uf-Lc-BfX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS7-9q-DYx">
+                                <rect key="frame" x="303" y="301" width="46" height="30"/>
+                                <state key="normal" title="Add Term"/>
+                                <connections>
+                                    <action selector="addTerm:" destination="krO-gn-seh" eventType="touchUpInside" id="1er-r6-8Et"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -120,12 +137,11 @@
                         <outlet property="backButton" destination="tai-FM-Tsr" id="eEZ-e8-crq"/>
                         <outlet property="listTitleLabel" destination="iHC-nT-TwV" id="0tu-vU-lUY"/>
                         <outlet property="nameTextField" destination="Dln-tV-7Ym" id="8Mh-2l-ZJe"/>
-                        <outlet property="vocabListTableView" destination="nBC-PR-Dhc" id="uMY-Zc-2HR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssL-WF-jjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="-404"/>
+            <point key="canvasLocation" x="2615" y="-404"/>
         </scene>
         <!--AboutView-->
         <scene sceneID="lDz-x0-87Q">
@@ -186,8 +202,62 @@
             </objects>
             <point key="canvasLocation" x="1733" y="252"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="98t-rp-eVq">
+            <objects>
+                <tableViewController id="Gha-iq-puA" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JWO-HG-4iD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" id="Feh-qe-HdQ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Feh-qe-HdQ" id="9nT-Zh-BId">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gha-iq-puA" id="d94-Y2-2r2"/>
+                            <outlet property="delegate" destination="Gha-iq-puA" id="4RY-UH-bkC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="LUb-eL-ZXy">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="giL-CB-Ldj">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="listsToMenu" id="kEF-Yn-VhU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pwp-Yv-0gn"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3p-pw-h6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2593" y="327"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cKS-UB-uh1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QIN-l7-rxh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLn-Sv-BxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gha-iq-puA" kind="relationship" relationship="rootViewController" id="PSn-4C-tXx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPs-Db-VWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="252"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rfu-y6-cFT"/>
+        <segue reference="kEF-Yn-VhU"/>
     </inferredMetricsTieBreakers>
 </document>

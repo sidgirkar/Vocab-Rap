@@ -13,12 +13,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     
     @IBOutlet weak var listTitleLabel: UILabel!
-    @IBOutlet weak var vocabListTableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addTermTextField: UITextField!
     @IBOutlet weak var backButton: UIButton!
-    
-    var terms: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +47,16 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        if (textField == nameTextField) {
-            listTitleLabel.text = textField.text
-        }
-        else {
-            terms.append(textField.text!)
-        }
-        
         return false
     }
+    
+    // MARK: Actions
+    
+    @IBAction func changeName(sender: UIButton) {
+        
+    }
 
+    @IBAction func addTerm(sender: UIButton) {
+        
+    }
 }
